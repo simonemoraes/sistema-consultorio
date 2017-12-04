@@ -1,0 +1,11 @@
+.estilo {
+    color: black;
+}
+
+#navbarDropdownMenuLink {
+    background-color: yellow;
+}
+
+.nav-item dropdown {
+    margin-right: auto;
+}
