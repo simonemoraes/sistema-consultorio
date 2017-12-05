@@ -1,0 +1,33 @@
+<div class="container" style="padding-top: 30px;">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title font-weight-normal">
+        <i class="fa fa-users" aria-hidden="true"></i>&nbsp; Pacientes
+      </h4>
+    </div>
+    <div class="card-body">
+
+      <app-paciente-new></app-paciente-new>
+
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Convênio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let paciente of pacientes">
+          <th scope="row">{{ paciente.id }}</th>
+          <td>{{ paciente.nome | uppercase }}</td>
+          <td>{{ paciente.telefone }}</td>
+          <td>{{ paciente.convenio | uppercase }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

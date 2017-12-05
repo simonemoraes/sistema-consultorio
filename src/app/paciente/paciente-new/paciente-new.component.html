@@ -1,0 +1,89 @@
+<a class="btn" id="btn_novo_paciente" (click)="open(content)">
+  <i class="fa fa-plus" aria-hidden="true"></i>
+  &nbsp; Novo
+</a>
+
+<!-- Modal para cadastro de novo paciente -->
+
+<ng-template #content let-c="close" let-d="dismiss" style="width: 100%;">
+  <div class="modal-header bg-light">
+    <h4 class="modal-title">Cadastro de Paciente</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
+      </div>
+
+      <div class="form-group">
+        <label for="dt_nasc">Data de Nasc:</label>
+        <input type="text" class="form-control" id="dt_nasc">
+      </div>
+
+      <div class="form-group">
+        <label for="cpf">Cpf:</label>
+        <input type="text" class="form-control" id="cpf">
+      </div>
+
+      <div class="form-group">
+        <label for="rg">Rg:</label>
+        <input type="text" class="form-control" id="rg">
+      </div>
+
+      <div class="form-group">
+        <label for="cep">Cep:</label>
+        <input type="text" class="form-control" id="cep">
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="text" class="form-control" id="telefone">
+      </div>
+
+      <div class="form-group">
+        <label for="operadora">Operadora:</label>
+        <input type="text" class="form-control" id="operadora">
+      </div>
+
+      <div class="form-group">
+        <label for="convenio">Convenio:</label>
+        <input type="text" class="form-control" id="convenio">
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" class="form-control" id="endereco">
+      </div>
+
+      <div class="form-group">
+        <label for="bairro">Bairro:</label>
+        <input type="text" class="form-control" id="bairro">
+      </div>
+
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <input type="text" class="form-control" id="cidade">
+      </div>
+
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input type="text" class="form-control" id="estado">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<!-- Fim - Modal para cadastro de novo paciente -->
+
+
