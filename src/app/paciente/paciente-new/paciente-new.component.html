@@ -15,7 +15,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form #f="ngForm" (ngSubmit)="onsubmit(f)">
+    <form #f="ngForm" ()="onsubmit(f)">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
