@@ -1,20 +1,21 @@
-<a class="btn" id="btn_novo_paciente" (click)="open(content)">
+<button type="button" class="btn btn-outline-primary" id="btn_novo_paciente" (click)="open(content)">
   <i class="fa fa-plus" aria-hidden="true"></i>
   &nbsp; Novo
-</a>
+</button>
 
 <!-- Modal para cadastro de novo paciente -->
 
 <ng-template #content let-c="close" let-d="dismiss" style="width: 100%;">
-  <div class="modal-header bg-light">
-    <h4 class="modal-title">Cadastro de Paciente</h4>
+  <div class="modal-header header_modal">
+    <h4 class="modal-title">
+	<i class="fa fa-address-card-o" aria-hidden="true"></i>
+	Cadastro de Paciente</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-
-    <form>
+    <form #f="ngForm" (ngSubmit)="onsubmit(f)">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
@@ -75,12 +76,11 @@
         <input type="text" class="form-control" id="estado">
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">
+	  <i class="fa fa-floppy-o" aria-hidden="true"></i>
+	  Salvar</button>
     </form>
 
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
   </div>
 </ng-template>
 

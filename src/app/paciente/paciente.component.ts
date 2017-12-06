@@ -11,6 +11,7 @@ import {Paciente} from "../modelos/paciente";
 export class PacienteComponent implements OnInit {
 
   pacientes: Paciente[];
+  sucesso: boolean = false;
 
   constructor( private pacienteService: PacienteService) { }
 
@@ -21,5 +22,9 @@ export class PacienteComponent implements OnInit {
     this.pacienteService.getPacientes()
         .subscribe(pacientes => this.pacientes = pacientes);
   };
+  
+  onsubmit(formulario){
+	  console.log(formulario);
+  }
 
 }

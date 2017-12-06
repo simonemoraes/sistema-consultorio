@@ -18,7 +18,7 @@ export class PacienteNewComponent implements OnInit {
 
     /* Janela modal de cadastro de Pacientes */
     open(content) {
-        this.modalService.open(content).result.then((result) => {
+        this.modalService.open(content, { size: 'sm'}).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

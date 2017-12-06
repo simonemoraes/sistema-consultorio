@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -29,6 +30,7 @@ import { PacienteService } from './injetores/paciente.service';
     ],
     imports: [
         BrowserModule,
+		FormsModule,
         AppRoutingModule,
         NgbModule.forRoot(),
         routing,

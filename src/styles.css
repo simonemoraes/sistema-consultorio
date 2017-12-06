@@ -6,18 +6,12 @@
 }
 
 #btn_novo_paciente {
-    border: 1px solid #17a2b8;
-    background-color: transparent;
-    color: #17a2b8;
     margin-bottom: 15px;
 }
 
-#btn_novo_paciente:focus {
-    border: 1px solid #17a2b8;
-}
 
-#btn_novo_paciente:hover {
-    background-color: #17a2b8;
-    border: transparent;
-    color: white;
+
+/* Alteração no tamanho da janela modal de cadastro de pacientes */
+.modal-sm {
+    max-width: 1000px;
 }

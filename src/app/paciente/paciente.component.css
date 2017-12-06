@@ -2,3 +2,16 @@
     background-color: #BFEFFF;
 }
 
+.tag_a_tabela_paciente {
+	
+	margin-left: 10px;
+	margin-right:10px;
+}
+
+.td_divider{
+	padding-left: 0px;
+	padding-right:0px;
+	width:10px;
+}
+
+

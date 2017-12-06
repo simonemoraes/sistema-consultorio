@@ -15,16 +15,31 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Convênio</th>
+          <th scope="col"  class="text-center">Telefone</th>
+          <th scope="col"  class="text-center">Convênio</th>
+		  <th scope="col" colspan="3"  class="text-center">Ação</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let paciente of pacientes">
           <th scope="row">{{ paciente.id }}</th>
           <td>{{ paciente.nome | uppercase }}</td>
-          <td>{{ paciente.telefone }}</td>
-          <td>{{ paciente.convenio | uppercase }}</td>
+          <td  class="text-center">{{ paciente.telefone }}</td>
+          <td  class="text-center">{{ paciente.convenio | uppercase }}</td>
+		  <td  class="text-center td_divider">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Editar" style="color: #E65100">
+		  <i class="fa fa-pencil-square-o tag_a_tabela_paciente" aria-hidden="true"></i>
+		  </a>
+		  </td>
+		  <td  class="text-center td_divider">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Visualizar"  style="border-left: 1px solid black;">
+		  <i class="fa fa-eye tag_a_tabela_paciente" aria-hidden="true"></i>
+		  </a></td>
+		  <td  class="text-center td_divider">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Excluir" style="border-left: 1px solid black; color: red;">
+		  <i class="fa fa fa-trash-o tag_a_tabela_paciente" aria-hidden="true"></i>
+		  </a></td>
+		  
         </tr>
         </tbody>
       </table>
