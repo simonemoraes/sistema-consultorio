@@ -1,6 +1,8 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
+import { Paciente } from '../../modelos/paciente';
 
 @Component({
   selector: 'app-paciente-new',
@@ -10,11 +12,17 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class PacienteNewComponent implements OnInit {
 
     closeResult: string;
+    public pacientes: Paciente[] = [];
 
     constructor( private modalService: NgbModal ) { }
 
     ngOnInit() {
     }
+	
+	onSubmit(formulario){
+	  console.log(formulario);
+	  console.log(this.pacientes);
+  }
 
     /* Janela modal de cadastro de Pacientes */
     open(content) {

@@ -9,7 +9,6 @@
 
       <app-paciente-new></app-paciente-new>
 
-
       <table class="table">
         <thead>
         <tr>
@@ -27,16 +26,16 @@
           <td  class="text-center">{{ paciente.telefone }}</td>
           <td  class="text-center">{{ paciente.convenio | uppercase }}</td>
 		  <td  class="text-center td_divider">
-		  <a href="#" data-toggle="tooltip" data-placement="right" title="Editar" style="color: #E65100">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Editar" style="color: #E65100" routerLink="/paciente/editar">
 		  <i class="fa fa-pencil-square-o tag_a_tabela_paciente" aria-hidden="true"></i>
 		  </a>
 		  </td>
 		  <td  class="text-center td_divider">
-		  <a href="#" data-toggle="tooltip" data-placement="right" title="Visualizar"  style="border-left: 1px solid black;">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Visualizar"  style="border-left: 1px solid black;" routerLink="/paciente/visualizar">
 		  <i class="fa fa-eye tag_a_tabela_paciente" aria-hidden="true"></i>
 		  </a></td>
 		  <td  class="text-center td_divider">
-		  <a href="#" data-toggle="tooltip" data-placement="right" title="Excluir" style="border-left: 1px solid black; color: red;">
+		  <a href="#" data-toggle="tooltip" data-placement="right" title="Excluir" style="border-left: 1px solid black; color: red;" routerLink="/paciente/excluir">
 		  <i class="fa fa fa-trash-o tag_a_tabela_paciente" aria-hidden="true"></i>
 		  </a></td>
 		  

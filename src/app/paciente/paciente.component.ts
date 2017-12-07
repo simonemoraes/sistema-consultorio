@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { PacienteService } from '../injetores/paciente.service';
-import {Paciente} from "../modelos/paciente";
+import { Paciente } from "../modelos/paciente";
 
 @Component({
   selector: 'app-paciente',
@@ -22,9 +22,4 @@ export class PacienteComponent implements OnInit {
     this.pacienteService.getPacientes()
         .subscribe(pacientes => this.pacientes = pacientes);
   };
-  
-  onsubmit(formulario){
-	  console.log(formulario);
-  }
-
 }
