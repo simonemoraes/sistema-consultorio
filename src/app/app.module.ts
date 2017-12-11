@@ -30,7 +30,7 @@ import { PacienteService } from './injetores/paciente.service';
     ],
     imports: [
         BrowserModule,
-		FormsModule,
+        FormsModule,
         AppRoutingModule,
         NgbModule.forRoot(),
         routing,

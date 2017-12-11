@@ -22,7 +22,7 @@ export class PacienteNewComponent implements OnInit {
 	onSubmit(formulario){
 	  console.log(formulario);
 	  console.log(this.pacientes);
-  }
+    }
 
     /* Janela modal de cadastro de Pacientes */
     open(content) {
