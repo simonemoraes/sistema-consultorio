@@ -20,7 +20,7 @@
 
   <div class="modal-body">
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
+    <form #f="ngForm" (ngSubmit)="add(f)" class="form-horizontal">
 
       <div class="form-group">
           <div class="row">
@@ -31,7 +31,7 @@
 
             <div class="col-sm-2">
               <label for="dt_nasc">Data de Nasc:</label>
-              <input type="text" class="form-control" id="nome"aria-describedby="emailHelp" name="nome" [(ngModel)]="pacientes.nome">
+              <input type="text" class="form-control" id="dt_nasc"aria-describedby="emailHelp" name="dt_nasc" [(ngModel)]="pacientes.dt_nasc">
             </div>
           </div>         
       </div>

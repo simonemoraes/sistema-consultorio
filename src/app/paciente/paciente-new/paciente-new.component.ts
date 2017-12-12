@@ -3,6 +3,7 @@ import {Component, OnInit, Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { Paciente } from '../../modelos/paciente';
+import { PacienteService } from '../../injetores/paciente.service';
 
 @Component({
   selector: 'app-paciente-new',
@@ -14,15 +15,49 @@ export class PacienteNewComponent implements OnInit {
     closeResult: string;
     public pacientes: Paciente[] = [];
 
-    constructor( private modalService: NgbModal ) { }
+    constructor( private modalService: NgbModal, private pacienteService: PacienteService ) { }
 
     ngOnInit() {
     }
 	
 	onSubmit(formulario){
-	  console.log(formulario);
-	  console.log(this.pacientes);
+
+      this.pacienteService.salvarPaciente(this.pacientes);
     }
+
+    /*
+    onSelect(hero: Hero): void {
+        this.selectedHero = hero;
+    }
+
+    getHeroes(): void {
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    }
+
+    gotoDetail(): void {
+        this.router.navigate(['/detail', this.selectedHero.id]);
+    }
+
+    add(name: string): void {
+        name = name.trim();
+        if (!name) { return; }
+        this.heroService.create(name)
+            .then(hero => {
+                this.heroes.push(hero);
+                this.selectedHero = null;
+            });
+    }
+
+    delete(hero: Hero): void {
+        this.heroService
+            .delete(hero.id)
+            .then(() => {
+                this.heroes = this.heroes.filter(h => h !== hero);
+                if (this.selectedHero === hero) { this.selectedHero = null; }
+            });
+    }
+
+*/
 
     /* Janela modal de cadastro de Pacientes */
     open(content) {
