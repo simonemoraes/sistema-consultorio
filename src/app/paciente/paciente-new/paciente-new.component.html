@@ -3,6 +3,7 @@
   &nbsp; Novo
 </button>
 
+
 <!-- Modal para cadastro de novo paciente -->
 
 <ng-template #content let-c="close" let-d="dismiss" style="width: 100%;">
@@ -20,10 +21,11 @@
 
   <div class="modal-body">
 
-    <form #f="ngForm" (ngSubmit)="add(f)" class="form-horizontal">
+	<form #f="ngForm" (ngSubmit)="add(f)" class="form-horizontal">
 
       <div class="form-group">
           <div class="row">
+		  
             <div class="col-sm-10">
               <label for="nome">Nome:</label>
               <input type="text" class="form-control" id="nome"aria-describedby="emailHelp" name="nome" [(ngModel)]="pacientes.nome">
@@ -33,6 +35,7 @@
               <label for="dt_nasc">Data de Nasc:</label>
               <input type="text" class="form-control" id="dt_nasc"aria-describedby="emailHelp" name="dt_nasc" [(ngModel)]="pacientes.dt_nasc">
             </div>
+			
           </div>         
       </div>
 
@@ -110,10 +113,6 @@
 
       <div class="form-group">
         <div class="row">
-          <div class="col-md-12">
-            <label for="rua">Rua:</label>
-          </div>
-
           <div class="col-md-12">
             <label for="rua">Rua:</label>
             <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="pacientes.rua">

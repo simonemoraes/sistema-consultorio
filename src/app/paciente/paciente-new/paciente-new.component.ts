@@ -20,9 +20,10 @@ export class PacienteNewComponent implements OnInit {
     ngOnInit() {
     }
 	
-	onSubmit(formulario){
+	add(formulario){
 
-      this.pacienteService.salvarPaciente(this.pacientes);
+      // console.log(this.pacientes);
+        this.pacienteService.salvarPaciente(this.pacientes);
     }
 
     /*
