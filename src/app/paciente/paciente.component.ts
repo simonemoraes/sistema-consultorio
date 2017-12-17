@@ -19,7 +19,10 @@ export class PacienteComponent implements OnInit {
   ngOnInit() { this.getPacientes() }
 
   getPacientes(): void{
-    this.pacienteService.getPacientes()
+    this.pacienteService.builder('pacientes')
+    .getPacientes()
         .subscribe(pacientes => this.pacientes = pacientes);
   };
+
+  
 }

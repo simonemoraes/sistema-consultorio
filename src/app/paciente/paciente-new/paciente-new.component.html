@@ -21,7 +21,7 @@
 
   <div class="modal-body">
 
-	<form #f="ngForm" (ngSubmit)="add(f)" class="form-horizontal">
+	<form #f="ngForm" class="form-horizontal">
 
       <div class="form-group">
           <div class="row">
@@ -139,8 +139,8 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary"
-        [disabled]="!f.valid">Salvar
+      <button class="btn btn-primary"
+        [disabled]="!f.valid" (click)="add($event, f)">Salvar
       </button>
 
     </form>

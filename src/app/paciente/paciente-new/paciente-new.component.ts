@@ -1,8 +1,12 @@
-import {Component, OnInit, Input } from '@angular/core';
+import { Paciente } from './../../modelos/paciente';
+import {Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { Paciente } from '../../modelos/paciente';
+import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
+
 import { PacienteService } from '../../injetores/paciente.service';
 
 @Component({
@@ -15,15 +19,20 @@ export class PacienteNewComponent implements OnInit {
     closeResult: string;
     public pacientes: Paciente[] = [];
 
-    constructor( private modalService: NgbModal, private pacienteService: PacienteService ) { }
+    constructor( private modalService: NgbModal, private pacienteService: PacienteService, private router: Router ) { }
 
     ngOnInit() {
     }
 	
-	add(formulario){
+	add(e){
+        e.preventDefault();
 
-      // console.log(this.pacientes);
-        this.pacienteService.salvarPaciente(this.pacientes);
+        this.pacienteService.builder('pacientes')
+        .insert(this.pacientes)
+        .then(res => {
+            this.router.navigate(['/paciente']);
+        })
+        
     }
 
     /*
