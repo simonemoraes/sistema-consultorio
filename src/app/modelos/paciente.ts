@@ -1,23 +1,23 @@
 export class Paciente {
-    id: number;
+    id: string;
     nome: string;
     rua: string;
     bairro: string;
     cidade: string;
     estado: string;
-    cep: number;
-    numero: number;
+    cep: string;
+    numero: string;
     complemento: string;
     dt_nasc: string;
     cpf: string;
     rg: string;
-    telefone: number;
-    celular: number;
+    telefone: string;
+    celular: string;
     operadora: string;
     convenio: string;
     num_convenio: string;
-    val_convenio: string
-    venct_convenio: string;
+    val_convenio: string;
+    via_convenio: string;
     profissao: string;
     empresa: string;
 
@@ -40,7 +40,7 @@ export class Paciente {
         convenio,
         num_convenio,
         val_convenio,
-        venct_convenio,
+        via_convenio,
         profissao,
         empresa
     ) {
@@ -57,12 +57,12 @@ export class Paciente {
         this.cpf = cpf;
         this.rg = rg;
         this.telefone = telefone;
-        this.celular - celular;
+        this.celular = celular;
         this.operadora = operadora;
         this.convenio = convenio;
         this.num_convenio = num_convenio;
         this.val_convenio = val_convenio;
-        this.venct_convenio = venct_convenio;
+        this.via_convenio = via_convenio;
         this.profissao = profissao;
         this.empresa = empresa;
     }

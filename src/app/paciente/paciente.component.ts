@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { PacienteService } from '../injetores/paciente.service';
-import { Paciente } from "../modelos/paciente";
+import { Paciente } from '../modelos/paciente';
 
 @Component({
   selector: 'app-paciente',
@@ -11,18 +11,18 @@ import { Paciente } from "../modelos/paciente";
 export class PacienteComponent implements OnInit {
 
   pacientes: Paciente[];
-  sucesso: boolean = false;
+  sucesso: Boolean = false;
 
   constructor( private pacienteService: PacienteService) { }
 
 
-  ngOnInit() { this.getPacientes() }
+  ngOnInit() {
+    this.getPacientes();
+  }
 
-  getPacientes(): void{
-    this.pacienteService.builder('pacientes')
+  getPacientes(): void {
+    this.pacienteService.builder('paciente')
     .getPacientes()
-        .subscribe(pacientes => this.pacientes = pacientes);
-  };
-
-  
+        .subscribe(paciente => this.pacientes = paciente);
+  }
 }
