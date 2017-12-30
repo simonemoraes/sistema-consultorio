@@ -20,9 +20,7 @@ export class PacienteComponent implements OnInit {
     this.getPacientes();
   }
 
-  getPacientes(): void {
-    this.pacienteService.builder('paciente')
-    .getPacientes()
-        .subscribe(paciente => this.pacientes = paciente);
+  getPacientes() {
+      this.pacienteService.listarPacientes();
   }
 }
