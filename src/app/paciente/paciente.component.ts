@@ -18,9 +18,10 @@ export class PacienteComponent implements OnInit {
 
   ngOnInit() {
     this.getPacientes();
+    
   }
 
   getPacientes() {
-      this.pacienteService.listarPacientes();
+      this.pacienteService.listarPacientes().subscribe(response => this.pacientes = response );
   }
 }

@@ -6,8 +6,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 /* Para API web em memória */
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './servidor/in-memory-data.service';
+
+
 
 import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,9 +37,7 @@ import { PacienteService } from './injetores/paciente.service';
         PacienteModule,
         AngularFontAwesomeModule,
         HttpClientModule,
-        HttpClientInMemoryWebApiModule.forRoot(
-            InMemoryDataService, { dataEncapsulation: false }
-        )
+       
     ],
     providers: [ PacienteService ],
     bootstrap: [AppComponent]
