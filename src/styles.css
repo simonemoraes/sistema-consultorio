@@ -9,9 +9,12 @@
     margin-bottom: 15px;
 }
 
+.header_modal {
+    background-color: #BFEFFF;
+}
 
 
 /* Alteração no tamanho da janela modal de cadastro de pacientes */
 .modal-sm {
-    max-width: 1000px;
+    /*max-width: 1000px;*/
 }

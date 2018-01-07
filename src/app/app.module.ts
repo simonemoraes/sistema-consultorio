@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
 /* Para API web em memória */
 
 

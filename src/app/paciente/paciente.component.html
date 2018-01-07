@@ -7,7 +7,11 @@
     </div>
     <div class="card-body">
 
-      <app-paciente-new></app-paciente-new>
+
+        <app-janela-modal [titulo]=[titulo_modal] [icone]=[icone_modal] >
+            <app-paciente-new [listapacientes] = (pacientes)></app-paciente-new>
+        </app-janela-modal>
+
 
       <table class="table">
         <thead>
@@ -45,3 +49,5 @@
     </div>
   </div>
 </div>
+
+

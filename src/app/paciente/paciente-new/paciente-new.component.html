@@ -1,152 +1,132 @@
-<button type="button" class="btn btn-outline-primary" id="btn_novo_paciente" (click)="open(content)">
-  <i class="fa fa-plus" aria-hidden="true"></i>
-  &nbsp; Novo
-</button>
+
 
 
 <!-- Modal para cadastro de novo paciente -->
 
-<ng-template #content let-c="close" let-d="dismiss" style="width: 100%;">
-  <div class="modal-header header_modal">
-    <h4 class="modal-title">
-	     <i class="fa fa-address-card-o" aria-hidden="true"></i>
-	     Cadastro de Paciente
-     </h4>
+<form #f="ngForm" class="form-horizontal">
 
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div class="form-group">
+      <div class="row">
 
+        <div class="col-sm-10">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome"aria-describedby="emailHelp" name="nome" [(ngModel)]="paciente.nome">
+        </div>
+
+        <div class="col-sm-2">
+          <label for="dt_nasc">Data de Nasc:</label>
+          <input type="text" class="form-control" id="dt_nasc"aria-describedby="emailHelp" name="dt_nasc" [(ngModel)]="paciente.dt_nasc">
+        </div>
+
+      </div>
   </div>
 
-  <div class="modal-body">
+  <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="cpf">Cpf:</label>
+          <input type="text" class="form-control" id="cpf"  name="cpf" [(ngModel)]="paciente.cpf">
+        </div>
 
-	<form #f="ngForm" class="form-horizontal">
-
-      <div class="form-group">
-          <div class="row">
-		  
-            <div class="col-sm-10">
-              <label for="nome">Nome:</label>
-              <input type="text" class="form-control" id="nome"aria-describedby="emailHelp" name="nome" [(ngModel)]="pacientes.nome">
-            </div>
-
-            <div class="col-sm-2">
-              <label for="dt_nasc">Data de Nasc:</label>
-              <input type="text" class="form-control" id="dt_nasc"aria-describedby="emailHelp" name="dt_nasc" [(ngModel)]="pacientes.dt_nasc">
-            </div>
-			
-          </div>         
-      </div>
-
-      <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label for="cpf">Cpf:</label>
-              <input type="text" class="form-control" id="cpf"  name="cpf" [(ngModel)]="pacientes.cpf">
-            </div>
-
-            <div class="col-md-4">
-              <label for="rg">Rg:</label>
-              <input type="text" class="form-control" id="rg" name="rg" [(ngModel)]="pacientes.rg">
-            </div>
-          </div>         
-      </div>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-4">
-            <label for="telefone">Telefone:</label>
-            <input type="text" class="form-control" id="telefone" name="telefone" [(ngModel)]="pacientes.telefone">
-          </div>
-
-          <div class="col-md-4">
-            <label for="celular">Celular:</label>
-            <input type="text" class="form-control" id="celular" name="celular" [(ngModel)]="pacientes.celular">
-          </div>
-
-          <div class="col-md-4">
-            <label for="operadora">Operadora:</label>
-            <input type="text" class="form-control" id="operadora" name="operadora" [(ngModel)]="pacientes.operadora">
-          </div>
-
-        </div>        
-      </div>
-
-      <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label for="convenio">Convenio:</label>
-              <input type="text" class="form-control" id="convenio" name="convenio" [(ngModel)]="pacientes.convenio">
-            </div>
-
-            <div class="col-md-6">
-              <label for="num_convenio">Carteirinha:</label>
-              <input type="text" class="form-control" id="num_convenio" name="num_convenio" [(ngModel)]="pacientes.num_convenio">
-            </div>
-
-            <div class="col-md-2">
-              <label for="val_convenio">Validade:</label>
-              <input type="text" class="form-control" id="val_convenio" name="val_convenio" [(ngModel)]="pacientes.val_convenio">
-            </div>
-          </div>         
-      </div>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-3">
-            <label for="cep">Cep:</label>
-            <input type="text" class="form-control" id="cep" name="cep" [(ngModel)]="pacientes.cep">
-          </div>
-
-          <div class="col-md-3">
-            <label for="numero">Numero:</label>
-            <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="pacientes.numero">
-          </div>
-
-          <div class="col-md-6">
-            <label for="complemento">Complemento:</label>
-            <input type="text" class="form-control" id="complemento" name="complemento" [(ngModel)]="pacientes.complemento">
-          </div>
+        <div class="col-md-4">
+          <label for="rg">Rg:</label>
+          <input type="text" class="form-control" id="rg" name="rg" [(ngModel)]="paciente.rg">
         </div>
       </div>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-12">
-            <label for="rua">Rua:</label>
-            <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="pacientes.rua">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-5">
-            <label for="bairro">Bairro:</label>
-            <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="pacientes.bairro">
-          </div>
-
-          <div class="col-md-4">
-            <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="pacientes.cidade">
-          </div>
-
-          <div class="col-md-3">
-            <label for="estado">Estado:</label>
-            <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="pacientes.estado">
-          </div>
-        </div>
-      </div>
-
-      <button class="btn btn-primary"
-        [disabled]="!f.valid" (click)="add($event, f)">Salvar
-      </button>
-
-    </form>
-
   </div>
-</ng-template>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="telefone">Telefone:</label>
+        <input type="text" class="form-control" id="telefone" name="telefone" [(ngModel)]="paciente.telefone">
+      </div>
+
+      <div class="col-md-4">
+        <label for="celular">Celular:</label>
+        <input type="text" class="form-control" id="celular" name="celular" [(ngModel)]="paciente.celular">
+      </div>
+
+      <div class="col-md-4">
+        <label for="operadora">Operadora:</label>
+        <input type="text" class="form-control" id="operadora" name="operadora" [(ngModel)]="paciente.operadora">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="convenio">Convenio:</label>
+          <input type="text" class="form-control" id="convenio" name="convenio" [(ngModel)]="paciente.convenio">
+        </div>
+
+        <div class="col-md-6">
+          <label for="num_convenio">Carteirinha:</label>
+          <input type="text" class="form-control" id="num_convenio" name="num_convenio" [(ngModel)]="paciente.num_convenio">
+        </div>
+
+        <div class="col-md-2">
+          <label for="val_convenio">Validade:</label>
+          <input type="text" class="form-control" id="val_convenio" name="val_convenio" [(ngModel)]="paciente.val_convenio">
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="cep">Cep:</label>
+        <input type="text" class="form-control" id="cep" name="cep" [(ngModel)]="paciente.cep">
+      </div>
+
+      <div class="col-md-3">
+        <label for="numero">Numero:</label>
+        <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="paciente.numero">
+      </div>
+
+      <div class="col-md-6">
+        <label for="complemento">Complemento:</label>
+        <input type="text" class="form-control" id="complemento" name="complemento" [(ngModel)]="paciente.complemento">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="rua">Rua:</label>
+        <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="paciente.rua">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-5">
+        <label for="bairro">Bairro:</label>
+        <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="paciente.bairro">
+      </div>
+
+      <div class="col-md-4">
+        <label for="cidade">Cidade:</label>
+        <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="paciente.cidade">
+      </div>
+
+      <div class="col-md-3">
+        <label for="estado">Estado:</label>
+        <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="paciente.estado">
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary"
+     (click)="save($event)">Salvar
+  </button>
+
+</form>
+
 
 <!-- Fim - Modal para cadastro de novo paciente -->
 

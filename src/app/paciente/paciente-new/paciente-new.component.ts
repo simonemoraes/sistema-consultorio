@@ -1,13 +1,9 @@
-import { Paciente } from './../../modelos/paciente';
-import {Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
-import { Observable } from 'rxjs/Observable';
 
 import { PacienteService } from '../../injetores/paciente.service';
+import { Paciente } from './../../modelos/paciente';
 
 @Component({
   selector: 'app-paciente-new',
@@ -17,45 +13,33 @@ import { PacienteService } from '../../injetores/paciente.service';
 export class PacienteNewComponent implements OnInit {
 
     closeResult: string;
-    public pacientes: Paciente[] = [];
+    public paciente = new Paciente(); /* Instanciando um objeto do tipo Paciente */
 
-    constructor( private modalService: NgbModal, private pacienteService: PacienteService, private router: Router ) { }
+    @Input() listapacientes: Paciente[];
 
-    ngOnInit() {
-    }
-	/*
-	add(e){
+    constructor( private pacienteService: PacienteService ) { }
+
+    ngOnInit() {}
+	
+	save(e){
         e.preventDefault();
 
-        this.pacienteService.builder('pacientes')
-        .insert(this.pacientes)
-        .then(res => {
-            this.router.navigate(['/paciente']);
-        })
+        this.pacienteService.builder('/paciente')
+        .save(this.paciente)
+        .subscribe(response =>
+            {
+                if(response.id > 0){
+
+                    this.paciente = response
+                    this.listapacientes.push(this.paciente);
+                    this.paciente = new Paciente()
+                }          
+            }
+        )
         
     }
 
 
-*/
 
-    /* Janela modal de cadastro de Pacientes */
-    open(content) {
-        this.modalService.open(content, { size: 'sm'}).result.then((result) => {
-            this.closeResult = `Closed with: ${result}`;
-        }, (reason) => {
-            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        });
-    }
 
-    private getDismissReason(reason: any): string {
-        if (reason === ModalDismissReasons.ESC) {
-            return 'by pressing ESC';
-        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        } else {
-            return  `with: ${reason}`;
-        }
-    }
-
-    /* Fim - Janela modal de cadastro de Pacientes */
 }

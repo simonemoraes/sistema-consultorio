@@ -1,23 +1,27 @@
-<a class="btn" id="btn_novo_paciente" (click)="open(content)">
+<button type="button" class="btn btn-outline-primary" id="btn_novo_paciente" (click)="open(content)">
   <i class="fa fa-plus" aria-hidden="true"></i>
   &nbsp; Novo
-</a>
+</button>
 
 <!-- Modal para cadastro de novo paciente -->
-
 <ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
+  <div class="modal-header header_modal">
+    <h4 class="modal-title">
+      <i [class]=[icone] aria-hidden="true"></i>
+      {{ titulo }}
+    </h4>
+
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
+
   </div>
+
   <div class="modal-body">
-    <p>One fine body&hellip;</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+   <ng-content></ng-content>
   </div>
 </ng-template>
 
 <!-- Fim - Modal para cadastro de novo paciente -->
+
+

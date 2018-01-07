@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { PacienteService } from '../injetores/paciente.service';
 import { Paciente } from '../modelos/paciente';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-paciente',
@@ -10,11 +12,14 @@ import { Paciente } from '../modelos/paciente';
 })
 export class PacienteComponent implements OnInit {
 
-  pacientes: Paciente[];
+
+  @Input() pacientes: Paciente[];
   sucesso: Boolean = false;
+  titulo_modal: string = 'Cadastro de Cliente';
+  icone_modal: string = 'fa fa-address-card-o';
 
-  constructor( private pacienteService: PacienteService) { }
-
+  constructor( private pacienteService: PacienteService, private modalService: NgbModal ) { }
+    closeResult: string;
 
   ngOnInit() {
     this.getPacientes();
@@ -22,6 +27,10 @@ export class PacienteComponent implements OnInit {
   }
 
   getPacientes() {
-      this.pacienteService.listarPacientes().subscribe(response => this.pacientes = response );
+      this.pacienteService.builder('/paciente').
+      listarPacientes().subscribe(response => this.pacientes = response );
   }
+
+
+
 }
