@@ -5,21 +5,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-
-/* Para API web em memória */
-
-
-
 import { AppRoutingModule, routing } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './layout/menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TesteParametroComponent } from './teste-parametro/teste-parametro.component';
 
 import {PacienteModule} from './paciente/paciente.module';
 
-import { PacienteService } from './injetores/paciente.service';
+import { PacienteService } from './paciente/resourse/paciente.service';
 
 @NgModule({
     declarations: [
@@ -28,6 +24,7 @@ import { PacienteService } from './injetores/paciente.service';
         HomeComponent,
         LoginComponent,
         TesteParametroComponent,
+        //PainelGenComponent
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,12 @@
+<div class="container" style="padding-top: 30px;">
+  <div [class]="painel.border_color">
+    <div [class]="painel.back_color_header">
+      <h4 [class]="painel.color_title">
+        <i [class]="painel.icon" aria-hidden="true"></i> {{ painel.title }}
+      </h4>
+    </div>
+    <div class="card-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

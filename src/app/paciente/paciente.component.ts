@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { PacienteService } from '../injetores/paciente.service';
-import { Paciente } from '../modelos/paciente';
-import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-
+import { PacienteService } from './resourse/paciente.service';
+import { Paciente } from './model/paciente';
+import {Painel_} from '../layout/painel-gen/model-painel/painel_';
+import {Modelo_janela} from '../layout/container/janela-modal/model-janela-modal/modelo_janela';
 
 @Component({
   selector: 'app-paciente',
@@ -12,16 +12,23 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class PacienteComponent implements OnInit {
 
+    // Modelo Janela
+  modeloJanela: Modelo_janela = new Modelo_janela();
 
+  public painel: Painel_ = new Painel_(
+      'Paciente',
+      'card border-primary',
+      'card-header bg-primary',
+      'card-title text-white font-weight-normal',
+      'fa fa-users'
+  );
   @Input() pacientes: Paciente[];
-  sucesso: Boolean = false;
-  titulo_modal: string = 'Cadastro de Cliente';
-  icone_modal: string = 'fa fa-address-card-o';
 
-  constructor( private pacienteService: PacienteService, private modalService: NgbModal ) { }
-    closeResult: string;
+  constructor( private pacienteService: PacienteService ) {
+      this.setPropJanelaModal();
+  }
 
-  ngOnInit() {
+    ngOnInit() {
     this.getPacientes();
     
   }
@@ -30,6 +37,13 @@ export class PacienteComponent implements OnInit {
       this.pacienteService.builder('/paciente').
       listarPacientes().subscribe(response => this.pacientes = response );
   }
+
+    private setPropJanelaModal() {
+        this.modeloJanela.titulo = 'Cadastro de Cliente';
+        this.modeloJanela.icone = 'fa fa-address-card-o';
+        this.modeloJanela.colorTitleModal = 'modal-title text-white';
+        this.modeloJanela.headerModal = 'modal-header bg-primary header_modal';
+    }
 
 
 

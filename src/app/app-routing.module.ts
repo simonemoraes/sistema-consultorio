@@ -9,7 +9,7 @@ import { PacienteEditComponent } from './paciente/paciente-edit/paciente-edit.co
 import { PacienteViewComponent } from './paciente/paciente-view/paciente-view.component';
 import { PacienteDeleteComponent } from './paciente/paciente-delete/paciente-delete.component';
 import { TesteParametroComponent } from './teste-parametro/teste-parametro.component';
-import {JanelaModalComponent} from './janela-modal/janela-modal.component';
+import {JanelaModalComponent} from './layout/container/janela-modal/janela-modal.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent},

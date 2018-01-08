@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 
-import { PacienteService } from '../../injetores/paciente.service';
-import { Paciente } from './../../modelos/paciente';
+import { PacienteService } from '../resourse/paciente.service';
+import { Paciente } from '../model/paciente';
 
 @Component({
   selector: 'app-paciente-new',
@@ -12,7 +12,6 @@ import { Paciente } from './../../modelos/paciente';
 })
 export class PacienteNewComponent implements OnInit {
 
-    closeResult: string;
     public paciente = new Paciente(); /* Instanciando um objeto do tipo Paciente */
 
     @Input() listapacientes: Paciente[];

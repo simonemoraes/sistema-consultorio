@@ -1,14 +1,6 @@
-<div class="container" style="padding-top: 30px;">
-  <div class="card">
-    <div class="card-header">
-      <h4 class="card-title font-weight-normal">
-        <i class="fa fa-users" aria-hidden="true"></i>&nbsp; Pacientes
-      </h4>
-    </div>
-    <div class="card-body">
+<app-painel-gen [painel]="painel">
 
-
-        <app-janela-modal [titulo]=[titulo_modal] [icone]=[icone_modal] >
+        <app-janela-modal [modeloJanela]="modeloJanela">
             <app-paciente-new [listapacientes] = (pacientes)></app-paciente-new>
         </app-janela-modal>
 
@@ -42,12 +34,9 @@
 		  <a href="#" data-toggle="tooltip" data-placement="right" title="Excluir" style="border-left: 1px solid black; color: red;" routerLink="/paciente/excluir">
 		  <i class="fa fa fa-trash-o tag_a_tabela_paciente" aria-hidden="true"></i>
 		  </a></td>
-		  
+
         </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</div>
 
-
+</app-painel-gen>

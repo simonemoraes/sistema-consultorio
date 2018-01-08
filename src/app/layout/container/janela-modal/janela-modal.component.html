@@ -5,10 +5,10 @@
 
 <!-- Modal para cadastro de novo paciente -->
 <ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header header_modal">
-    <h4 class="modal-title">
-      <i [class]=[icone] aria-hidden="true"></i>
-      {{ titulo }}
+  <div [class]="modeloJanela.headerModal">
+    <h4 [class]="modeloJanela.colorTitleModal">
+      <i [class]="modeloJanela.icone" aria-hidden="true"></i>
+      {{ modeloJanela.titulo }}
     </h4>
 
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">

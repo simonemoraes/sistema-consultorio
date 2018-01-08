@@ -1,6 +1,7 @@
 import {Component, Input, OnDestroy, OnInit, Output} from '@angular/core';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {Modelo_janela} from "./model-janela-modal/modelo_janela";
 
 @Component({
   selector: 'app-janela-modal',
@@ -11,14 +12,11 @@ export class JanelaModalComponent implements OnInit{
 
     closeResult: string;
 
-    @Input()
-    titulo: string = '';
+    @Input() modeloJanela: Modelo_janela;
 
-    @Input()
-    icone: string = '';
-
-    @Input()
-    listagemobj: any;
+    @Input() titulo: string = '';
+    @Input() icone: string = '';
+    @Input() listagemobj: any;
 
   constructor( private modalService: NgbModal ) { }
 
